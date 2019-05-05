@@ -26,7 +26,8 @@ if (isset($_GET['id'])) {
                 Title
             </th>
             <td>
-                <input type="text" name="title" value="<?php echo $editContent['title'] ?>"/>
+                <input type="text" name="title"
+                       value="<?php echo isset($editContent['title']) ? $editContent['title'] : ""; ?>"/>
             </td>
         </tr>
         <tr>

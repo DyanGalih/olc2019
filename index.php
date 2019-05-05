@@ -1,5 +1,5 @@
 <?php
-
+include "conn.php";
 include "data.php";
 /*
 echo "<pre>";
