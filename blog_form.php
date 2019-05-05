@@ -1,3 +1,14 @@
+<?php
+include "data.php";
+$editContent = [];
+if (isset($_GET['id'])) {
+    for ($i = 0; $i < count($contentList); $i++) {
+        if ($contentList[$i]['id'] == $_GET['id']) {
+            $editContent = $contentList[$i];
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +18,7 @@
 <h1>Input Blog Form</h1>
 <a href="index.php">List</a>
 <br/>
-<form action="save_blog.php" enctype="multipart/form-data" method="post">
+<form action="save_blog.php?id=<?php echo $editContent['id'] ?>" enctype="multipart/form-data" method="post">
     <table>
         <tbody>
         <tr>
@@ -15,7 +26,8 @@
                 Title
             </th>
             <td>
-                <input type="text" name="title" value=""/>
+                <input type="text" name="title"
+                       value="<?php echo isset($editContent['title']) ? $editContent['title'] : ""; ?>"/>
             </td>
         </tr>
         <tr>
@@ -23,7 +35,7 @@
                 Description
             </th>
             <td>
-                <textarea name="description" cols="50" rows="5"></textarea>
+                <textarea name="description" cols="50" rows="5"><?php echo $editContent['description'] ?></textarea>
             </td>
         </tr>
         <tr>
@@ -31,7 +43,7 @@
                 Content
             </th>
             <td>
-                <textarea name="content" cols="50" rows="20"></textarea>
+                <textarea name="content" cols="50" rows="20"><?php echo $editContent['content'] ?></textarea>
             </td>
         </tr>
         <tr>
