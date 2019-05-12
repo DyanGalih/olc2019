@@ -11,3 +11,5 @@ $stmt->bind_param("i", $id);
 $id = $_GET['id'];
 
 $stmt->execute();
+
+header('Location: http://localhost/olc');
