@@ -1,13 +1,13 @@
 <?php
-include "data.php";
-$editContent = [];
-if (isset($_GET['id'])) {
-    for ($i = 0; $i < count($contentList); $i++) {
-        if ($contentList[$i]['id'] == $_GET['id']) {
-            $editContent = $contentList[$i];
-        }
-    }
-}
+include "content_data.php";
+$editContent = $contentList[0];
+//if (isset($_GET['id'])) {
+//    for ($i = 0; $i < count($contentList); $i++) {
+//        if ($contentList[$i]['id'] == $_GET['id']) {
+//            $editContent = $contentList[$i];
+//        }
+//    }
+//}
 ?>
 <!DOCTYPE html>
 <html>
