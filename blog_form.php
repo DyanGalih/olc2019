@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
 <h1>Input Blog Form</h1>
 <a href="index.php">List</a>
 <br/>
-<form action="save_blog.php?id=<?php echo $editContent['id'] ?>" enctype="multipart/form-data" method="post">
+<form action="save_blog.php?id=<?php echo isset($editContent['id'])?$editContent['id']:""; ?>" enctype="multipart/form-data" method="post">
     <table>
         <tbody>
         <tr>

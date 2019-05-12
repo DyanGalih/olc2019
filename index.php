@@ -1,6 +1,6 @@
 <?php
-include "conn.php";
-include "data.php";
+
+include "content_data.php";
 /*
 echo "<pre>";
 var_dump($contentList);
