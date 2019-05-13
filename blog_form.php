@@ -1,13 +1,13 @@
 <?php
-include "data.php";
-$editContent = [];
-if (isset($_GET['id'])) {
-    for ($i = 0; $i < count($contentList); $i++) {
-        if ($contentList[$i]['id'] == $_GET['id']) {
-            $editContent = $contentList[$i];
-        }
-    }
-}
+include "content_data.php";
+$editContent = $contentList[0];
+//if (isset($_GET['id'])) {
+//    for ($i = 0; $i < count($contentList); $i++) {
+//        if ($contentList[$i]['id'] == $_GET['id']) {
+//            $editContent = $contentList[$i];
+//        }
+//    }
+//}
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
 <h1>Input Blog Form</h1>
 <a href="index.php">List</a>
 <br/>
-<form action="save_blog.php?id=<?php echo $editContent['id'] ?>" enctype="multipart/form-data" method="post">
+<form action="save_blog.php?id=<?php echo isset($editContent['id'])?$editContent['id']:""; ?>" enctype="multipart/form-data" method="post">
     <table>
         <tbody>
         <tr>

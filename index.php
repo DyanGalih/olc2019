@@ -1,6 +1,6 @@
 <?php
-include "conn.php";
-include "data.php";
+
+include "content_data.php";
 /*
 echo "<pre>";
 var_dump($contentList);
@@ -65,7 +65,7 @@ echo "</pre>";
                     <?php echo $contentList[$i]['date_time'] ?>
                 </td>
                 <td>
-                    <a href="blog_form.php?id=<?php echo $contentList[$i]['id'] ?>"> Ubah </a> | <a href="#"> Hapus </a>
+                    <a href="blog_form.php?id=<?php echo $contentList[$i]['id'] ?>"> Ubah </a> | <a href="delete_blog.php?id=<?php echo $contentList[$i]['id']?>"> Hapus </a>
                 </td>
             </tr>
             <?php
